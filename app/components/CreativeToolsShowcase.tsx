@@ -6,7 +6,6 @@ import {
   Layers, 
   Compass, 
   FileText, 
-  Camera, 
   RotateCcw, 
   Zap, 
   Star,
