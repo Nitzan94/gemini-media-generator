@@ -723,7 +723,7 @@ export default function MediaGenerator() {
         
         {/* Footer message */}
         <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-6 border border-purple-100">
-          <p className="text-gray-700 font-medium mb-2 text-center">
+          <p className="text-gray-700 font-medium mb-2 text-center" dir="rtl">
             נוצר באהבה ❤️ עם{' '}
             <span className="gradient-text font-bold">Claude Code</span> ו{' '}
             <span className="gradient-text font-bold">בינה מלאכותית של גוגל</span> ✨

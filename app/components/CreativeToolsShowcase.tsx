@@ -32,62 +32,62 @@ export default function CreativeToolsShowcase() {
   const promptElements: PromptElement[] = [
     {
       id: 1,
-      name: "נושא וקונטקסט",
+      name: "Task",
       icon: Target,
-      description: "הגדירו את הנושא הראשי והרקע",
-      example: "חתול (נושא) יושב על חלון (קונטקסט)",
+      description: "מה אתם רוצים שהמודל יעשה?",
+      example: "כתוב, נתח, צור, תרגם",
       color: "blue-500",
       gradient: "from-blue-400 to-cyan-400",
       delay: 0
     },
     {
       id: 2,
-      name: "סגנון וגישה",
+      name: "Context",
       icon: Layers,
-      description: "בחרו סגנון אמנותי או ויזואלי",
-      example: "סקיצה, ציור שמן, צילום, אנימציה",
-      color: "slate-700",
-      gradient: "from-slate-800 to-slate-950",
+      description: "מידע רקע רלוונטי",
+      example: "קהל יעד, סגנון רצוי, מגבלות",
+      color: "green-500",
+      gradient: "from-green-400 to-teal-400",
       delay: 100
     },
     {
       id: 3,
-      name: "הוראות ברורות",
-      icon: FileText,
-      description: "כתבו הוראות מפורטות וספציפיות",
-      example: "צרו תמונה של... במקום רק 'תמונה'",
-      color: "green-500",
-      gradient: "from-green-400 to-teal-400",
+      name: "Exemplars",
+      icon: Star,
+      description: "דוגמאות של התוצאה הרצויה",
+      example: "הראה דוגמה איך זה אמור להיראות",
+      color: "amber-500",
+      gradient: "from-amber-400 to-orange-500",
       delay: 200
     },
     {
       id: 4,
-      name: "שפה תיאורית",
+      name: "Persona",
       icon: Sparkles,
-      description: "השתמשו בשמות תואר מפורטים",
-      example: "אישה צעירה בשמלה אדומה רצה",
-      color: "amber-700",
-      gradient: "from-amber-500 to-orange-600",
+      description: "איזה תפקיד המודל ימלא?",
+      example: "פעל כמו מעצב, מורה, יועץ",
+      color: "purple-500",
+      gradient: "from-purple-400 to-pink-400",
       delay: 300
     },
     {
       id: 5,
-      name: "זווית ומסגור",
-      icon: Camera,
-      description: "ציינו זווית המצלמה והרכב התמונה",
-      example: "זווית רחבה, מאקרו, מבט מלמעלה",
-      color: "rose-700",
-      gradient: "from-rose-500 to-red-600",
+      name: "Format",
+      icon: FileText,
+      description: "איך התוצאה צריכה להיות מוצגת?",
+      example: "רשימה, טבלה, פסקה, JSON",
+      color: "rose-500",
+      gradient: "from-rose-400 to-red-500",
       delay: 400
     },
     {
       id: 6,
-      name: "שיפור איטרטיבי",
+      name: "Tone",
       icon: RotateCcw,
-      description: "שפרו בהדרגה עד לתוצאה מושלמת",
-      example: "התחילו פשוט ואז הוסיפו פרטים",
+      description: "איזה טון ואווירה?",
+      example: "רשמי, חברותי, מקצועי, יצירתי",
       color: "indigo-500",
-      gradient: "from-indigo-400 to-purple-400",
+      gradient: "from-indigo-400 to-blue-400",
       delay: 500
     }
   ];
@@ -141,9 +141,6 @@ export default function CreativeToolsShowcase() {
             <Zap className="w-6 h-6 text-yellow-500 animate-pulse" />
           </div>
         </div>
-        <p className="text-gray-600 max-w-3xl mx-auto mb-6 text-center leading-relaxed">
-          המדריך של גוגל ליצירת פרומפטים יעילים עם Gemini AI 🎯 רחפו על כל יסוד כדי ללמוד איך להשתמש בו ✨
-        </p>
       </div>
 
       {/* Elements Grid */}
@@ -176,7 +173,7 @@ export default function CreativeToolsShowcase() {
               </div>
 
               {/* Element Name */}
-              <h3 className="text-xs font-medium text-gray-600 text-center group-hover:text-gray-700 rtl:text-right leading-tight">
+              <h3 className="text-xs font-medium text-gray-600 text-center group-hover:text-gray-700 leading-tight">
                 {element.name}
               </h3>
 
