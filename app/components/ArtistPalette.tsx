@@ -80,7 +80,7 @@ export default function ArtistPalette() {
           {/* Palette tooltip */}
           <div className="absolute -left-48 top-1/2 transform -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none">
             <div className="bg-gray-900/90 text-white px-3 py-2 rounded-lg text-sm whitespace-nowrap">
-              🎨 Artist's Palette
+              🎨 Artist&apos;s Palette
               <div className="text-xs text-gray-300 mt-1">Colors for inspiration!</div>
             </div>
           </div>
