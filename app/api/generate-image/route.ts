@@ -84,7 +84,7 @@ export async function POST(request: NextRequest) {
       console.error('Gemini API Error:', apiError);
       
       // Handle specific API errors
-      if (apiError.message?.includes('API_KEY_INVALID')) {
+      if ((apiError as any)?.message?.includes('API_KEY_INVALID')) {
         return NextResponse.json(
           { 
             success: false, 
