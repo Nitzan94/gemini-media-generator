@@ -362,7 +362,7 @@ export default function MediaGenerator() {
   };
 
   return (
-    <div className="relative w-full max-w-6xl mx-auto space-y-8">
+    <div className="relative w-full max-w-4xl mx-auto space-y-8 px-4">
       {/* Creative Background */}
       <CreativeBackground />
       
@@ -545,7 +545,7 @@ export default function MediaGenerator() {
               onClick={handleGenerate}
               disabled={isGenerating || !prompt.trim() || !apiKey.trim()}
               className={`
-                btn-primary w-full py-6 text-xl font-bold relative overflow-hidden shadow-2xl transform transition-all duration-300
+                btn-primary w-full py-3 text-base font-bold relative overflow-hidden shadow-2xl transform transition-all duration-300
                 ${isGenerating ? 'loading-gradient scale-105' : 'hover:scale-105'}
                 disabled:opacity-50 disabled:cursor-not-allowed disabled:scale-100
               `}
@@ -554,16 +554,16 @@ export default function MediaGenerator() {
                 {isGenerating ? (
                   <>
                     <div className="relative">
-                      <Loader2 className="w-8 h-8 animate-spin" />
-                      <div className="absolute inset-0 w-8 h-8 border-2 border-white/30 rounded-full animate-ping" />
+                      <Loader2 className="w-6 h-6 animate-spin" />
+                      <div className="absolute inset-0 w-6 h-6 border-2 border-white/30 rounded-full animate-ping" />
                     </div>
                     <span className="animate-pulse">✨ יוצר קסם בשבילכם... ✨</span>
                   </>
                 ) : (
                   <>
                     <div className="relative">
-                      <Wand2 className="w-8 h-8 animate-bounce" />
-                      <div className="absolute -top-1 -right-1 w-3 h-3 bg-yellow-400 rounded-full animate-ping" />
+                      <Wand2 className="w-6 h-6 animate-bounce" />
+                      <div className="absolute -top-1 -right-1 w-2 h-2 bg-yellow-400 rounded-full animate-ping" />
                     </div>
                     <span>🎨 בואו ניצור קסם! 🌟</span>
                   </>
@@ -725,6 +725,7 @@ export default function MediaGenerator() {
         <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-6 border border-purple-100">
           <p className="text-gray-700 font-medium mb-2">
             נוצר באהבה ❤️ עם{' '}
+            <span className="gradient-text font-bold">Claude Code</span> ו{' '}
             <span className="gradient-text font-bold">בינה מלאכותית של גוגל</span> ✨
           </p>
           <p className="text-sm text-gray-600">

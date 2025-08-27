@@ -164,3 +164,63 @@ Currently no testing framework is configured. When adding tests:
 - Test error handling scenarios
 - Verify Hebrew/RTL layout behavior
 - Check accessibility features
+
+## 🚀 DEPLOYMENT WORKFLOW - CRITICAL GUIDELINES
+
+### ⚠️ **Golden Rules for Deployment:**
+
+1. **NEVER deploy without local build check:**
+   ```bash
+   npm run build  # MUST pass before any deployment
+   ```
+
+2. **Pre-deployment checklist:**
+   ```bash
+   npm run lint          # Fix all ESLint errors
+   npm run type-check    # Fix all TypeScript errors (if available)
+   npm run build         # MUST succeed
+   git add . && git commit -m "Ready for deployment"
+   git push
+   vercel --prod --yes   # Only after successful build
+   ```
+
+### 🔧 **Common Deployment Issues & Solutions:**
+
+**ESLint Errors:**
+- `@typescript-eslint/no-explicit-any`: Use proper types or disable rule
+- `@typescript-eslint/no-unused-vars`: Remove unused imports/variables
+- `react/no-unescaped-entities`: Use `&quot;` `&apos;` for quotes
+- `react-hooks/exhaustive-deps`: Add missing dependencies to useEffect
+
+**TypeScript Errors:**
+- `unknown` type in catch blocks: Use `(error as any)?.message`
+- `readonly` arrays: Cast to `string[]` when needed
+- Missing type imports: Ensure all types are imported
+
+**Next.js Warnings:**
+- Use `<Image>` from `next/image` instead of `<img>` for optimization
+
+### 📋 **Recommended .eslintrc.json for smooth deployment:**
+```json
+{
+  "extends": ["next/core-web-vitals", "next/typescript"],
+  "rules": {
+    "@typescript-eslint/no-explicit-any": "off"
+  }
+}
+```
+
+### 🛠️ **Emergency Deployment Recovery:**
+If deployment fails:
+1. Check Vercel build logs for specific error
+2. Run `npm run build` locally and fix errors
+3. Commit fixes and push again
+4. Never push code that doesn't build locally
+
+### 📝 **Build-First Development Approach:**
+- Run `npm run build` every 30-45 minutes during development
+- Fix issues immediately when they appear
+- Use TodoWrite to track deployment progress
+- Always test production build before major features
+
+**Remember:** Development server (`npm run dev`) is more permissive than production build!
