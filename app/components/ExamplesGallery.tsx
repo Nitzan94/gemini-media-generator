@@ -67,9 +67,6 @@ export default function ExamplesGallery() {
     setSelectedExample(selectedExample === id ? null : id);
   };
 
-  const openFullScreen = (imageSrc: string) => {
-    setFullScreenImage(imageSrc);
-  };
 
   const closeFullScreen = () => {
     setFullScreenImage(null);

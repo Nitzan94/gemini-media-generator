@@ -10,7 +10,6 @@ import {
   Check,
   AlertCircle,
   Wand2,
-  Image as ImageIcon,
   X,
   Loader2
 } from 'lucide-react';
@@ -49,7 +48,7 @@ export default function MediaGenerator() {
   const [prompt, setPrompt] = useState('');
   const [apiKey, setApiKey] = useState('');
   const [uploadedImages, setUploadedImages] = useState<Array<{data: string; name: string}>>([]);
-  const [uploadedFileName, setUploadedFileName] = useState<string>(''); // Keep for backwards compatibility
+  const [, setUploadedFileName] = useState<string>(''); // Keep for backwards compatibility
   const [isGenerating, setIsGenerating] = useState(false);
   const [result, setResult] = useState<GenerationResult | null>(null);
   const [showApiKey, setShowApiKey] = useState(false);
@@ -209,8 +208,8 @@ export default function MediaGenerator() {
         }
       }, 100);
 
-    } catch (error) {
-      console.error('Generation error:', error);
+    } catch {
+      console.error('Generation error');
       setResult({
         success: false,
         error: 'Failed to connect to the server. Please try again.',
@@ -230,7 +229,7 @@ export default function MediaGenerator() {
       triggerGentleConfetti(); // Celebrate copying!
       playCopySound();
       setTimeout(() => setCopied(false), 2000);
-    } catch (error) {
+    } catch {
       // Fallback for browsers that don't support clipboard API
       const textArea = document.createElement('textarea');
       textArea.value = text;
@@ -334,8 +333,8 @@ export default function MediaGenerator() {
       closeShareDialog();
       playSuccessSound();
       
-    } catch (error) {
-      console.log('Share cancelled or failed:', error);
+    } catch {
+      console.log('Share cancelled or failed');
       
       // If all sharing methods fail, at least download the image
       try {
@@ -776,7 +775,7 @@ export default function MediaGenerator() {
                 </p>
                 {shareData.text && (
                   <div className="bg-gray-50 rounded-lg p-3 text-sm text-gray-600 text-center">
-                    <strong>נוצר עם:</strong> "{shareData.text}"<br/>
+                    <strong>נוצר עם:</strong> &quot;{shareData.text}&quot;<br/>
                     <span className="text-xs text-gray-500">(המידע הזה לא ישותף, רק התמונה)</span>
                   </div>
                 )}

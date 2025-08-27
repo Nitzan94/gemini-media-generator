@@ -46,7 +46,7 @@ class CreativeSounds {
 
       oscillator.start(this.audioContext.currentTime);
       oscillator.stop(this.audioContext.currentTime + duration);
-    } catch (error) {
+    } catch {
       console.log('Audio playback not available');
     }
   }
@@ -56,7 +56,7 @@ class CreativeSounds {
     if (typeof window !== 'undefined' && 'navigator' in window && 'vibrate' in navigator) {
       try {
         navigator.vibrate(pattern);
-      } catch (error) {
+      } catch {
         console.log('Haptic feedback not available');
       }
     }

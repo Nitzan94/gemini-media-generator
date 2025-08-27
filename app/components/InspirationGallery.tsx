@@ -82,7 +82,7 @@ export default function InspirationGallery() {
       await navigator.clipboard.writeText(text);
       playCopySound();
       // Show success feedback
-    } catch (error) {
+    } catch {
       console.log('Copy failed');
     }
   };

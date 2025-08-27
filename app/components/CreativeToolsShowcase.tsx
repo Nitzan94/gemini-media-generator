@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   Target, 
   Layers, 
@@ -8,17 +8,15 @@ import {
   FileText, 
   Camera, 
   RotateCcw, 
-  Wand2, 
   Zap, 
   Star,
-  Heart,
   Sparkles
 } from 'lucide-react';
 
 interface PromptElement {
   id: number;
   name: string;
-  icon: any;
+  icon: React.ComponentType<{ className?: string }>;
   description: string;
   example: string;
   color: string;
@@ -231,7 +229,7 @@ export default function CreativeToolsShowcase() {
               <div className="bg-white/80 rounded-lg p-3 border border-gray-200">
                 <p className="text-xs text-gray-500 mb-1 font-medium">דוגמה מפורטת:</p>
                 <p className="text-sm text-gray-700 italic">
-                  "{promptElements.find(t => t.id === activeTool)?.example}"
+                  &quot;{promptElements.find(t => t.id === activeTool)?.example}&quot;
                 </p>
               </div>
             </div>

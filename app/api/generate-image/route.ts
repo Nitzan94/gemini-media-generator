@@ -1,6 +1,5 @@
 import { GoogleGenAI } from '@google/genai';
 import { NextRequest, NextResponse } from 'next/server';
-import mime from 'mime';
 
 export async function POST(request: NextRequest) {
   try {
@@ -81,7 +80,7 @@ export async function POST(request: NextRequest) {
         timestamp: new Date().toISOString()
       });
 
-    } catch (apiError: any) {
+    } catch (apiError: unknown) {
       console.error('Gemini API Error:', apiError);
       
       // Handle specific API errors
@@ -129,7 +128,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Server Error:', error);
     
     // Handle JSON parsing errors

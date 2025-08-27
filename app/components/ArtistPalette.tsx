@@ -38,7 +38,7 @@ export default function ArtistPalette() {
       clearTimeout(timer);
       clearInterval(tipInterval);
     };
-  }, []);
+  }, [creativeTips.length]);
 
   return (
     <>
