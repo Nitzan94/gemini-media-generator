@@ -23,7 +23,7 @@ export async function POST(request: NextRequest) {
 
     // Configuration for image generation
     const config = {
-      responseModalities: ['IMAGE', 'TEXT'] as const,
+      responseModalities: ['IMAGE', 'TEXT'] as string[],
     };
 
     const model = 'gemini-2.5-flash-image-preview';
