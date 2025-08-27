@@ -135,13 +135,13 @@ export default function CreativeToolsShowcase() {
         <div className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 p-1 rounded-2xl mb-4">
           <div className="bg-white rounded-xl px-6 py-3 flex items-center gap-3">
             <Compass className="w-6 h-6 text-blue-500 animate-bounce" />
-            <h2 className="text-xl font-display font-bold gradient-text text-right">
+            <h2 className="text-xl font-display font-bold gradient-text text-center">
               6 יסודות לפרומפט מושלם
             </h2>
             <Zap className="w-6 h-6 text-yellow-500 animate-pulse" />
           </div>
         </div>
-        <p className="text-gray-600 max-w-3xl mx-auto mb-6 text-right leading-relaxed" dir="rtl">
+        <p className="text-gray-600 max-w-3xl mx-auto mb-6 text-center leading-relaxed">
           המדריך של גוגל ליצירת פרומפטים יעילים עם Gemini AI 🎯 רחפו על כל יסוד כדי ללמוד איך להשתמש בו ✨
         </p>
       </div>

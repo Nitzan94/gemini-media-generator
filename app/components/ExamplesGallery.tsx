@@ -79,13 +79,13 @@ export default function ExamplesGallery() {
         <div className="inline-flex items-center gap-3 bg-gradient-to-r from-purple-400 via-pink-400 to-orange-400 p-1 rounded-2xl mb-4">
           <div className="bg-white rounded-xl px-6 py-3 flex items-center gap-3">
             <Camera className="w-6 h-6 text-purple-500 animate-bounce" />
-            <h2 className="text-xl font-display font-bold gradient-text text-right">
+            <h2 className="text-xl font-display font-bold gradient-text text-center">
               דוגמאות לשימוש
             </h2>
             <Palette className="w-6 h-6 text-pink-500 animate-pulse" />
           </div>
         </div>
-        <p className="text-gray-600 max-w-3xl mx-auto mb-6 text-right">
+        <p className="text-gray-600 max-w-3xl mx-auto mb-6 text-center">
           רגעים קסומים שנוצרו עם Gemini AI 🎨 לחצו על כל דוגמה כדי לראות לפני ואחרי ✨
         </p>
       </div>
