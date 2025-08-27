@@ -101,7 +101,7 @@ export default function InspirationGallery() {
           </div>
         </div>
         <p className="text-gray-600 max-w-2xl mx-auto">
-          רעיונות מדהימים שיעזרו לך להתחיל ✨ לחץ על כל רעיון להעתיק ולהתחיל ליצור!
+          לחץ על כל רעיון להעתיק ולהתחיל ליצור! 🎯
         </p>
       </div>
 
@@ -173,7 +173,7 @@ export default function InspirationGallery() {
       <div className="text-center mt-8 animate-fade-in animate-stagger-3">
         <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-400/20 to-blue-400/20 backdrop-blur-sm px-6 py-3 rounded-2xl border border-green-200/50">
           <span className="text-2xl animate-bounce">🎨</span>
-          <span className="text-gray-600 font-medium">
+          <span className="text-gray-600 font-medium text-center" dir="rtl">
             השראה זה רק ההתחלה - תן לדמיון שלך לעוף!
           </span>
           <span className="text-2xl animate-bounce delay-300">✨</span>

@@ -394,8 +394,8 @@ export default function MediaGenerator() {
           {/* API Key Section */}
           <div className="space-y-3">
             <div className="flex items-center justify-between">
-              <label className="block text-sm font-medium text-gray-700 flex items-center gap-2">
-                🔑 מפתח הקסם שלך (Gemini API Key)
+              <label className="block text-sm font-medium text-gray-700 flex items-center gap-2 text-right" dir="rtl">
+                Gemini API Key
                 <span className="text-yellow-500 animate-pulse">✨</span>
               </label>
               <button
@@ -723,13 +723,10 @@ export default function MediaGenerator() {
         
         {/* Footer message */}
         <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-6 border border-purple-100">
-          <p className="text-gray-700 font-medium mb-2">
+          <p className="text-gray-700 font-medium mb-2 text-right" dir="rtl">
             נוצר באהבה ❤️ עם{' '}
             <span className="gradient-text font-bold">Claude Code</span> ו{' '}
             <span className="gradient-text font-bold">בינה מלאכותית של גוגל</span> ✨
-          </p>
-          <p className="text-sm text-gray-600">
-            🔒 המפתח שלכם נשמר רק במחשב שלכם - אנחנו לא רואים אותו!
           </p>
         </div>
         

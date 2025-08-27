@@ -127,21 +127,21 @@ export default function CreativeToolsShowcase() {
   };
 
   return (
-    <div className={`relative transition-all duration-1000 ${
+    <div className={`relative transition-all duration-1000 dir-rtl ${
       isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-    }`}>
+    }`} dir="rtl">
       {/* Section Header */}
       <div className="text-center mb-8">
         <div className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 p-1 rounded-2xl mb-4">
           <div className="bg-white rounded-xl px-6 py-3 flex items-center gap-3">
             <Compass className="w-6 h-6 text-blue-500 animate-bounce" />
-            <h2 className="text-xl font-display font-bold gradient-text">
+            <h2 className="text-xl font-display font-bold gradient-text text-right">
               6 יסודות לפרומפט מושלם
             </h2>
             <Zap className="w-6 h-6 text-yellow-500 animate-pulse" />
           </div>
         </div>
-        <p className="text-gray-600 max-w-3xl mx-auto mb-6">
+        <p className="text-gray-600 max-w-3xl mx-auto mb-6 text-right leading-relaxed" dir="rtl">
           המדריך של גוגל ליצירת פרומפטים יעילים עם Gemini AI 🎯 רחפו על כל יסוד כדי ללמוד איך להשתמש בו ✨
         </p>
       </div>
@@ -156,10 +156,10 @@ export default function CreativeToolsShowcase() {
             <div
               key={element.id}
               className={`
-                group relative bg-white/95 backdrop-blur-sm rounded-2xl p-4 
-                shadow-card border border-white/50 hover:shadow-card-hover 
+                group relative bg-white/95 backdrop-blur-sm rounded-lg p-2 
+                shadow-sm border border-white/50 hover:shadow-md 
                 hover:scale-105 transition-all duration-300 cursor-pointer
-                ${isActive ? 'scale-105 shadow-card-hover' : ''}
+                ${isActive ? 'scale-105 shadow-md' : ''}
               `}
               onMouseEnter={() => handleToolHover(element.id)}
               onMouseLeave={handleToolLeave}
@@ -167,16 +167,16 @@ export default function CreativeToolsShowcase() {
             >
               {/* Element Icon */}
               <div className={`
-                w-16 h-16 rounded-full bg-gradient-to-r ${element.gradient} 
-                flex items-center justify-center mb-4 mx-auto
+                w-10 h-10 rounded-full bg-gradient-to-r ${element.gradient} 
+                flex items-center justify-center mb-2 mx-auto
                 group-hover:rotate-12 group-hover:scale-110 transition-all duration-300
                 ${isActive ? 'rotate-12 scale-110' : ''}
               `}>
-                <IconComponent className="w-8 h-8 text-white" />
+                <IconComponent className="w-5 h-5 text-white" />
               </div>
 
               {/* Element Name */}
-              <h3 className="text-lg font-bold text-gray-800 text-center group-hover:text-gray-900">
+              <h3 className="text-xs font-medium text-gray-600 text-center group-hover:text-gray-700 rtl:text-right leading-tight">
                 {element.name}
               </h3>
 
@@ -220,15 +220,15 @@ export default function CreativeToolsShowcase() {
               })()}
             </div>
             <div className="flex-1">
-              <h3 className="text-lg font-bold text-gray-800 mb-2">
+              <h3 className="text-lg font-bold text-gray-800 mb-2 text-right">
                 {promptElements.find(t => t.id === activeTool)?.name}
               </h3>
-              <p className="text-gray-600 mb-3">
+              <p className="text-gray-600 mb-3 text-right">
                 {promptElements.find(t => t.id === activeTool)?.description}
               </p>
               <div className="bg-white/80 rounded-lg p-3 border border-gray-200">
-                <p className="text-xs text-gray-500 mb-1 font-medium">דוגמה מפורטת:</p>
-                <p className="text-sm text-gray-700 italic">
+                <p className="text-xs text-gray-500 mb-1 font-medium text-right">דוגמה מפורטת:</p>
+                <p className="text-sm text-gray-700 italic text-right">
                   &quot;{promptElements.find(t => t.id === activeTool)?.example}&quot;
                 </p>
               </div>
@@ -260,7 +260,7 @@ export default function CreativeToolsShowcase() {
       <div className="text-center mt-8">
         <div className="inline-flex items-center gap-3 bg-gradient-to-r from-emerald-400/20 to-blue-400/20 backdrop-blur-sm px-6 py-3 rounded-2xl border border-emerald-200/50">
           <span className="text-2xl animate-bounce">🎯</span>
-          <span className="text-gray-600 font-medium">
+          <span className="text-gray-600 font-medium text-center">
             עכשיו אתם מוכנים לכתוב פרומפטים מושלמים! בואו ניצור יחד ✨
           </span>
           <span className="text-2xl animate-bounce delay-300">🚀</span>

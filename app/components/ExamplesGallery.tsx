@@ -73,19 +73,19 @@ export default function ExamplesGallery() {
   };
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8" dir="rtl">
       {/* Section Header */}
       <div className="text-center">
         <div className="inline-flex items-center gap-3 bg-gradient-to-r from-purple-400 via-pink-400 to-orange-400 p-1 rounded-2xl mb-4">
           <div className="bg-white rounded-xl px-6 py-3 flex items-center gap-3">
             <Camera className="w-6 h-6 text-purple-500 animate-bounce" />
-            <h2 className="text-xl font-display font-bold gradient-text">
+            <h2 className="text-xl font-display font-bold gradient-text text-right">
               דוגמאות לשימוש
             </h2>
             <Palette className="w-6 h-6 text-pink-500 animate-pulse" />
           </div>
         </div>
-        <p className="text-gray-600 max-w-3xl mx-auto mb-6">
+        <p className="text-gray-600 max-w-3xl mx-auto mb-6 text-right">
           רגעים קסומים שנוצרו עם Gemini AI 🎨 לחצו על כל דוגמה כדי לראות לפני ואחרי ✨
         </p>
       </div>
@@ -100,20 +100,20 @@ export default function ExamplesGallery() {
               {/* Example Card */}
               <div
                 className={`
-                  group relative bg-white/95 backdrop-blur-sm rounded-2xl p-4 
-                  shadow-card border border-white/50 hover:shadow-card-hover 
+                  group relative bg-white/95 backdrop-blur-sm rounded-xl p-3 
+                  shadow-md border border-white/50 hover:shadow-lg 
                   hover:scale-105 transition-all duration-300 cursor-pointer
-                  ${isSelected ? 'scale-105 shadow-card-hover ring-2 ring-purple-400' : ''}
+                  ${isSelected ? 'scale-105 shadow-lg ring-2 ring-purple-400' : ''}
                 `}
                 onClick={() => handleExampleClick(example.id)}
               >
 
                 {/* Preview Image */}
-                <div className="relative rounded-xl overflow-hidden mb-4">
+                <div className="relative rounded-lg overflow-hidden mb-3">
                   <img
                     src={example.image1}
                     alt={`דוגמה ${example.name}`}
-                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300 cursor-pointer"
+                    className="w-full h-36 object-cover group-hover:scale-110 transition-transform duration-300 cursor-pointer"
                     onClick={(e) => {
                       e.stopPropagation();
                       if (isSelected) {
@@ -128,19 +128,19 @@ export default function ExamplesGallery() {
                     }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-                  <div className="absolute bottom-2 left-2 right-2 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                    <ZoomIn className="w-4 h-4 inline mr-1" />
+                  <div className="absolute bottom-2 left-2 right-2 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none text-right">
                     <span className="text-xs">לחץ לצפייה מלאה</span>
+                    <ZoomIn className="w-4 h-4 inline ml-1" />
                   </div>
-                  <div className="absolute top-2 left-2 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                    <Eye className="w-4 h-4 inline mr-1" />
+                  <div className="absolute top-2 right-2 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none text-right">
                     <span className="text-xs">לחץ על הכרטיס לוריאציה שנייה</span>
+                    <Eye className="w-4 h-4 inline ml-1" />
                   </div>
                 </div>
 
                 {/* Example Info */}
                 <div className="text-center">
-                  <h3 className="text-lg font-bold text-gray-800 group-hover:text-purple-600">
+                  <h3 className="text-sm font-medium text-gray-700 group-hover:text-purple-600 text-right">
                     {example.name}
                   </h3>
                 </div>
@@ -153,21 +153,21 @@ export default function ExamplesGallery() {
 
               {/* Expanded View - Show Second Image Only */}
               {isSelected && (
-                <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-2xl p-4 border border-purple-200 animate-fade-in">
-                  <div className="relative rounded-xl overflow-hidden group cursor-pointer">
+                <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-3 border border-purple-200 animate-fade-in">
+                  <div className="relative rounded-lg overflow-hidden group cursor-pointer">
                     <img
                       src={example.image2}
                       alt={`${example.name} - וריאציה 2`}
-                      className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+                      className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
                       onClick={() => {
                         console.log('Opening image 2:', example.image2);
                         setFullScreenImage(example.image2);
                       }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-                    <div className="absolute bottom-2 right-2 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                      <ZoomIn className="w-4 h-4 inline mr-1" />
+                    <div className="absolute bottom-2 left-2 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none text-right">
                       <span className="text-xs">לחץ לצפייה מלאה</span>
+                      <ZoomIn className="w-4 h-4 inline ml-1" />
                     </div>
                   </div>
                 </div>
@@ -181,7 +181,7 @@ export default function ExamplesGallery() {
       <div className="text-center mt-12">
         <div className="inline-flex items-center gap-3 bg-gradient-to-r from-purple-400/20 to-pink-400/20 backdrop-blur-sm px-6 py-3 rounded-2xl border border-purple-200/50">
           <span className="text-2xl animate-bounce">🎨</span>
-          <span className="text-gray-600 font-medium">
+          <span className="text-gray-600 font-medium text-center">
             מוכנים ליצור משהו דומה? בואו ננסה יחד! ✨
           </span>
           <span className="text-2xl animate-bounce delay-300">🚀</span>
