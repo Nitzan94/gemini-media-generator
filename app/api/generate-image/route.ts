@@ -95,7 +95,7 @@ export async function POST(request: NextRequest) {
         );
       }
       
-      if (apiError.message?.includes('QUOTA_EXCEEDED')) {
+      if ((apiError as any)?.message?.includes('QUOTA_EXCEEDED')) {
         return NextResponse.json(
           { 
             success: false, 
@@ -106,7 +106,7 @@ export async function POST(request: NextRequest) {
         );
       }
       
-      if (apiError.message?.includes('RATE_LIMIT_EXCEEDED')) {
+      if ((apiError as any)?.message?.includes('RATE_LIMIT_EXCEEDED')) {
         return NextResponse.json(
           { 
             success: false, 
@@ -121,7 +121,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         { 
           success: false, 
-          error: `Gemini API Error: ${apiError.message || 'Unknown error occurred'}`,
+          error: `Gemini API Error: ${(apiError as any)?.message || 'Unknown error occurred'}`,
           code: 'GEMINI_API_ERROR'
         }, 
         { status: 500 }
